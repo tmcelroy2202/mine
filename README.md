@@ -11,6 +11,7 @@ mIne allows you to interface with an externally hosted large language model with
 It includes the following features:
 * an /aigenerate command which allows you to generate an ai response to any query
 * an aigenerate function which can be passed a prompt and used easily to generate ai responses to queries for use by other aspects of the mod 
+* the amazing ruby code and filestructure of jakob august's tutorialmod. 
 * whatever the rest of my groupmates write which will be later included in this readme
 
 
