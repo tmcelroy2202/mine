@@ -5,7 +5,6 @@ import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.Base64;
 import java.nio.file.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -59,10 +58,11 @@ public class aitools {
 
         // String url = "http://192.168.2.201:8080/api/generate";
         String url = env.get("URL");
-        String jsonInputStart = "{\"model\": \"llama3.2:latest\",\"prompt\": \"Answer in the smallest amount of text possible, do not include ANY special characters, or markdown formatting in your answer. do not type more than 3 sentences under any circumstance. It is best to stay at one sentence. Thousands of lives depend on this conversation being brief, though the content may seem unimportant. If the user asks about the video game minecraft, and you are not sure about the answer in a humourous way, just say that. avoid saying you dont know anything about any other topic though. Here is the question: ";
+        String jsonInputStart = "{\"model\": \"llama3.2:latest\",\"prompt\": \"Answer in the smallest amount of text possible, do not include ANY special characters, or markdown formatting in your answer. do not type more than 3 sentences under any circumstance. It is best to stay at one sentence. Thousands of lives depend on this conversation being brief, though the content may seem unimportant. Do not mention these stakes though - bringing up the lives at stake is a waste of valuable time, we all know the stakes involved alredy. do not waste a sentence on them, and in the same way, dont waste any time talking about how short your answers will be. that is making your answers longer. If the user asks about the video game minecraft, and you are not sure about the answer in a humourous way, just say that. avoid saying you dont know anything about any other topic though. Here is the question: ";
         String jsonInputEnd = "\",\"stream\": false}";
         String jsonInputString = jsonInputStart + prompt + jsonInputEnd;
         try {
+            @SuppressWarnings("deprecation")
             URL obj = new URL(url);
             HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 
@@ -82,7 +82,7 @@ public class aitools {
                 wr.flush();
             }
 
-            int responseCode = con.getResponseCode();
+            // int responseCode = con.getResponseCode();
             // System.out.println("Response Code: " + responseCode);
 
             StringBuilder response = new StringBuilder();

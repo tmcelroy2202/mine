@@ -4,7 +4,7 @@ import net.fabricmc.api.ModInitializer;
 
 import net.jakobaugust.tutorialmod.item.ModItemGroups;
 import net.jakobaugust.tutorialmod.item.ModItems;
-import net.jakobaugust.tutorialmod.aitools;
+// import net.jakobaugust.tutorialmod.aitools;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
